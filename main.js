@@ -18,11 +18,8 @@ $(document).ready(function() {
         success: function(data) {
 
             dischi_musicali = data.response;
-            console.log(dischi_musicali);
 
             for (var i = 0; i < dischi_musicali.length; i++) {
-
-                console.log(dischi_musicali[i]);
 
                 var cd_corrente = dischi_musicali[i];
 
@@ -33,8 +30,6 @@ $(document).ready(function() {
                     genre: cd_corrente.genre,
                     year: cd_corrente.year
                 }
-
-                console.log(cd);
 
                 var html_finale = template_function(cd);
                 $('.container').append(html_finale);
