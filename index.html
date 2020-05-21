@@ -2,10 +2,24 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
         <title>Musica</title>
     </head>
     <body>
+        <div class="container">
+
+            <script id="card-cd" type="text/x-handlebars-template">
+                <div class="cd">
+                    <img src="{{poster}}" alt="">
+                    <p>{{title}}</p>
+                    <p>{{author}}</p>
+                    <p>{{genre}}</p>
+                    <p>{{year}}</p>
+                </div>
+            </script>
+
+        </div>
 
 
 

@@ -15,17 +15,19 @@ $(document).ready(function() {
 
             dischi_musicali = data.response;
             console.log(dischi_musicali);
+
+            for (var i = 0; i < dischi_musicali.length; i++) {
+                console.log(dischi_musicali[i]);
+            }
+        },
+        'error': function() {
+            alert('si è verificato un errore');
         }
-    })
+    });
 
-
-
-
-
-
-
-
-
+    // for (var i = 0; i < dischi_musicali.length; i++) {
+    //     console.log(dischi_musicali[i]);
+    // }
 
 
 });
