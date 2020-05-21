@@ -8,6 +8,10 @@ $(document).ready(function() {
 
     var dischi_musicali = [];
 
+    var template_html = $('#card-cd').html();
+
+    var template_function = Handlebars.compile(template_html);
+
     $.ajax({
         url: 'https://flynn.boolean.careers/exercises/api/array/music',
         method: 'GET',
@@ -17,17 +21,29 @@ $(document).ready(function() {
             console.log(dischi_musicali);
 
             for (var i = 0; i < dischi_musicali.length; i++) {
+
                 console.log(dischi_musicali[i]);
+
+                var cd_corrente = dischi_musicali[i];
+
+                var cd = {
+                    poster: cd_corrente.poster,
+                    title:  cd_corrente.title,
+                    author: cd_corrente.author,
+                    genre: cd_corrente.genre,
+                    year: cd_corrente.year
+                }
+
+                console.log(cd);
+
+                var html_finale = template_function(cd);
+                $('.container').append(html_finale);
             }
         },
         'error': function() {
             alert('si è verificato un errore');
         }
     });
-
-    // for (var i = 0; i < dischi_musicali.length; i++) {
-    //     console.log(dischi_musicali[i]);
-    // }
 
 
 });
